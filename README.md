@@ -18,7 +18,7 @@
 1. Select `Create access key`.
 1. Select `Download .csv file` and save this file for later.
 #####  Create an EC2 Instance and connect to it.
-1. Login to the [Aws Management Console](https://console.aws.amazon.com/).
+1. Login to the [AWS Management Console](https://console.aws.amazon.com/).
 1. Navigate to the EC2 service.
 1. Select `Launch Instance`.
 1. In the `Name` field, enter a name for this instance (ex. `deploy-env`).
