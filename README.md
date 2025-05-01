@@ -8,6 +8,8 @@
 - [Test VM](#test-vm)
 
 - [Space Invaders Site](#space-invaders-site)
+  
+- [Cleanup](#cleanup)
 
 ### Objectives
 1. Build an environment to run Terraform
