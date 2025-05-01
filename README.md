@@ -37,6 +37,25 @@
     1. Enter your region.
     1. Enter `json` for default output format.
 
+### Test VM
+1. `cd ~/aws-infrastructure/test_vm`
+1. If you want to use your own input variables, edit the `terraform.tfvars` file.
+1. `terraform init`
+1. `terraform apply -auto-approve`
+    - This should print the public ip address of the created VM.
+1. In the AWS Management Console, verify that the VM exists in the expected region.
+1. `terraform destroy -auto-approve`
+
+### Space Invaders Site
+1. `cd ~/aws-infrastructure/space_invaders`
+1. If you want to use your own input variables, edit the `terraform.tfvars` file.
+1. `terraform init`
+1. `terraform apply -auto-approve`
+    - This should print the DNS address of the website.
+1. Visit the DNS address in your browser.
+    - It may take a few minutes for the server to go online.
+1. `terraform destroy -auto-approve`
+
 
 
 
