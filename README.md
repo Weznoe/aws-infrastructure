@@ -61,7 +61,7 @@
 1. `terraform destroy -auto-approve`
 
 ### Space Invaders Site
-1. `cd ~/aws-infrastructure/space_invaders`
+1. `cd ~/aws-infrastructure/space_invaders/main`
 1. If you want to use your own input variables, edit the `terraform.tfvars` file.
 1. `terraform init`
 1. `terraform apply -auto-approve`
