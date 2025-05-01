@@ -15,3 +15,4 @@ image_id = {
 vpc_cidr      = "192.168.0.0/16"
 subnet_a_cidr = "192.168.1.0/24"
 subnet_b_cidr = "192.168.2.0/24"
+add_public_ip = true

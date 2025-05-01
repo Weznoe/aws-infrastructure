@@ -3,6 +3,7 @@ resource "aws_elb" "elb" {
   security_groups           = var.security_groups
   subnets                   = var.subnets
   cross_zone_load_balancing = true
+
   health_check {
     healthy_threshold   = 2
     unhealthy_threshold = 2
@@ -16,5 +17,8 @@ resource "aws_elb" "elb" {
     lb_protocol       = "http"
     instance_port     = "80"
     instance_protocol = "http"
+  }
+  tags = {
+    Name = "${var.prefix}elb"
   }
 }

@@ -53,14 +53,23 @@ variable "instance_type" {
   default     = "t2.micro"
 }
 
-
 variable "region" {
   type        = string
   description = "The region to create these resources in."
 }
 
-
 variable "security_groups" {
   type        = list(string)
   description = "The ids of security groups to use for each webserver."
+}
+
+variable "load_balancers" {
+  type        = list(string)
+  description = "The ids of load balancers this autoscaling group belongs to"
+}
+
+variable "subnets" {
+  type        = list(string)
+  description = "The ids of subnets to deploy in."
+
 }

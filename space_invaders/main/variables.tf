@@ -7,8 +7,7 @@ variable "image_id" {
   type        = map(string)
 }
 variable "add_public_ip" {
-  type    = bool
-  default = true
+  type = bool
 }
 
 variable "project" {

@@ -18,14 +18,11 @@ resource "aws_autoscaling_group" "auto-scaling" {
   min_size          = var.instance_count_min
   max_size          = var.instance_count_max
   health_check_type = "ELB"
-  load_balancers    = [aws_elb.elb.id]
+  load_balancers    = var.load_balancers
 
   launch_configuration = aws_launch_configuration.launch_configuration.name
 
-  vpc_zone_identifier = [
-    aws_subnet.subnet-a.id,
-    aws_subnet.subnet-b.id
-  ]
+  vpc_zone_identifier = var.subnets
 
   # Required to redeploy without an outage.
   lifecycle {
