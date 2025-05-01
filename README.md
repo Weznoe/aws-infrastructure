@@ -1,4 +1,13 @@
 # AWS Engagement Ready Program - Infrastructure Capstone
+## Table of Contents
+
+- [Objectives](#objectives)
+
+- [Environment](#environment)
+
+- [Test VM](#test-vm)
+
+- [Space Invaders Site](#space-invaders-site)
 
 ### Objectives
 1. Build an environment to run Terraform
