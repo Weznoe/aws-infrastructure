@@ -7,7 +7,7 @@ resource "aws_vpc" "vpc" {
   }
 }
 
-resource "aws_subnet" "subnet" {
+resource "aws_subnet" "subnets" {
   count = length(var.subnets)
 
   vpc_id            = aws_vpc.vpc.id

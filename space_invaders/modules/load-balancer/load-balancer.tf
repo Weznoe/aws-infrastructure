@@ -1,9 +1,7 @@
 resource "aws_elb" "elb" {
-  name = "${var.project}-elb"
-  security_groups = [
-    aws_security_group.allow-http.id
-  ]
-  subnets                   = [aws_subnet.subnet-a.id, aws_subnet.subnet-b.id]
+  name                      = "${var.prefix}-elb"
+  security_groups           = var.security_groups
+  subnets                   = var.subnets
   cross_zone_load_balancing = true
   health_check {
     healthy_threshold   = 2

@@ -28,3 +28,10 @@ module "vpc" {
     },
   ]
 }
+
+module "load-balancer" {
+  source          = "../modules/load-balancer"
+  prefix          = var.project
+  security_groups = [aws_security_group.allow-http.id]
+  subnets         = module.vpc.subnets
+}
