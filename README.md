@@ -70,8 +70,13 @@
     - It may take a few minutes for the server to go online.
 1. `terraform destroy -auto-approve`
 
-
-
+### Cleanup
+When you're all done, clean up your VM you created in [Environment](#environment). 
+1. Navigate to the EC2 service.
+2. Click the `Instances` link on the left.
+3. Find your active VM and select it.
+4. Select `Instance State` and then `Terminate (delete) instance`
+5. In the confirmation dialog, select `Terminate (delete)`.
 
 
 
