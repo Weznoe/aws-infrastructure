@@ -45,7 +45,7 @@
 ##### Install your environment tools
 1. `cd ~/aws-infrastructure`
 1. `./setup_environment.sh`
-1. Input the AWS Access Key and AWS Secret Acces Key from the `.csv` file you downloaded earlier.
+    1. Input the AWS Access Key and AWS Secret Acces Key from the `.csv` file you downloaded earlier.
     1. Enter your region.
     1. Enter `json` for default output format.
 
