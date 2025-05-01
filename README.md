@@ -39,6 +39,7 @@
 1. In the `Connect to instance` screen, leave the defaults and select `Connect`.
 
 ##### Download this repo
+1. `sudo yum install git`
 1. `cd ~`
 1. `git clone https://github.com/Weznoe/aws-infrastructure.git`
 
