@@ -31,7 +31,7 @@
 #####  Create an EC2 Instance and connect to it
 1. Navigate to the EC2 service.
 1. Select the `Instances` link from the left.
-1. Select `Launch Instance`.
+1. Select `Launch Instances`.
 1. In the `Name` field, enter a name for this instance (ex. `deploy-env`).
 1. Under the `Key pair (login)` select `Proceed without a key pair (Not recommended)`
 1. Leave the defaults for everything else.
@@ -40,7 +40,7 @@
 1. In the `Connect to instance` screen, leave the defaults and select `Connect`.
 
 ##### Download this repo
-1. `sudo yum install git`
+1. `sudo yum install git -y`
 1. `cd ~`
 1. `git clone https://github.com/Weznoe/aws-infrastructure.git`
 
