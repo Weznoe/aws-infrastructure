@@ -30,6 +30,7 @@
 
 #####  Create an EC2 Instance and connect to it
 1. Navigate to the EC2 service.
+1. Select the `Instances` link from the left.
 1. Select `Launch Instance`.
 1. In the `Name` field, enter a name for this instance (ex. `deploy-env`).
 1. Under the `Key pair (login)` select `Proceed without a key pair (Not recommended)`
