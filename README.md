@@ -19,7 +19,6 @@
 ### Environment
 
 ##### Create an AWS access key pair
----
 1. Navigate to the `IAM` service.
 1. Select the `Users` link from the left.
 1. Select your user.
@@ -29,7 +28,6 @@
 1. Select `Download .csv file` and save this file for later.
 
 #####  Create an EC2 Instance and connect to it
----
 1. Login to the [AWS Management Console](https://console.aws.amazon.com/).
 1. Navigate to the EC2 service.
 1. Select `Launch Instance`.
@@ -41,12 +39,10 @@
 1. In the `Connect to instance` screen, leave the defaults and select `Connect`.
 
 ##### Download this repo
----
 1. `cd ~`
 1. `git clone https://github.com/Weznoe/aws-infrastructure.git`
 
 ##### Install your environment tools
----
 1. `cd ~/aws-infrastructure`
 1. `./setup_environment.sh`
 1. Input the AWS Access Key and AWS Secret Acces Key from the `.csv` file you downloaded earlier.
