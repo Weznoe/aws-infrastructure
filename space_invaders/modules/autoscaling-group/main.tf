@@ -1,12 +1,12 @@
 resource "aws_launch_configuration" "launch_configuration" {
-  name = "${var.project}-launch-config"
+  name = "${var.prefix}-launch-config"
 
-  image_id                    = var.image_id[var.region]
+  image_id                    = var.image_id
   instance_type               = var.instance_type
-  security_groups             = [aws_security_group.allow-http.id, aws_security_group.allow-ssh.id]
+  security_groups             = var.security_groups
   associate_public_ip_address = var.add_public_ip
 
-  user_data = file("install_space_invaders.sh")
+  user_data = var.user_data
 
   lifecycle {
     create_before_destroy = true
@@ -14,11 +14,11 @@ resource "aws_launch_configuration" "launch_configuration" {
 }
 
 resource "aws_autoscaling_group" "auto-scaling" {
-  name = "${var.project}-asg"
-  min_size = var.instance_count_min
-  max_size = var.instance_count_max
+  name              = "${var.prefix}-asg"
+  min_size          = var.instance_count_min
+  max_size          = var.instance_count_max
   health_check_type = "ELB"
-  load_balancers = [ aws_elb.elb.id ]
+  load_balancers    = [aws_elb.elb.id]
 
   launch_configuration = aws_launch_configuration.launch_configuration.name
 
@@ -34,7 +34,7 @@ resource "aws_autoscaling_group" "auto-scaling" {
 
   tag {
     key                 = "Name"
-    value               = "${var.project}-webserver"
+    value               = "${var.prefix}-webserver"
     propagate_at_launch = true
   }
 }

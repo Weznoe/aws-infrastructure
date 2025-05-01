@@ -3,27 +3,19 @@ resource "aws_vpc" "vpc" {
   instance_tenancy = "default"
 
   tags = {
-    Name = "${var.project}-vpc"
+    Name = "${var.prefix}-vpc"
   }
 }
 
-resource "aws_subnet" "subnet-a" {
+resource "aws_subnet" "subnet" {
+  count = length(var.subnets)
+
   vpc_id            = aws_vpc.vpc.id
-  cidr_block        = var.subnet_a_cidr
-  availability_zone = "${var.region}a"
+  cidr_block        = var.subnets[count.index].cidr_block
+  availability_zone = var.subnets[count.index].zone
 
   tags = {
-    Name = "${var.project}-vpc-subnet-a"
-  }
-}
-
-resource "aws_subnet" "subnet-b" {
-  vpc_id            = aws_vpc.vpc.id
-  cidr_block        = var.subnet_b_cidr
-  availability_zone = "${var.region}b"
-
-  tags = {
-    Name = "${var.project}-vpc-subnet-b"
+    Name = "${var.prefix}-vpc-subnet-${var.subnets[count.index].zone}"
   }
 }
 
@@ -31,7 +23,7 @@ resource "aws_internet_gateway" "ig" {
   vpc_id = aws_vpc.vpc.id
 
   tags = {
-    Name = "${var.project}-vpc-ig"
+    Name = "${var.prefix}-vpc-ig"
   }
 }
 
